@@ -12,8 +12,7 @@ class Setting extends StatefulWidget {
 
 class _SettingState extends State<Setting> {
   String formattedDate = DateFormat('yyyy-MM-dd – kk:mm').format(DateTime.now());
-
-
+  
   final controller1 = TextEditingController();
   final controller2 = TextEditingController();
   final controller3 = TextEditingController();
@@ -34,114 +33,116 @@ class _SettingState extends State<Setting> {
   }
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: <Widget>[
-        Container(
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Text("현재 자산",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+    return SafeArea(
+      child: ListView(
+        children: <Widget>[
+          Container(
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text("현재 자산",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: TextField(
-            controller: controller1,
-            textAlign: TextAlign.right,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: "현재 자산(원)",
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: TextField(
-            controller: controller2,
-            textAlign: TextAlign.right,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: "현재 자산(\$)",
-            ),
-          ),
-        ),
-        Container(
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Text("입금",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: controller1,
+              textAlign: TextAlign.right,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "현재 자산(원)",
               ),
             ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: TextField(
-            controller: controller3,
-            textAlign: TextAlign.right,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: "입금(원)",
-            ),
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: TextField(
-            controller: controller4,
-            textAlign: TextAlign.right,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: "입금(\$)",
-            ),
-          ),
-        ),
-        Container(
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Text("출금",
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: controller2,
+              textAlign: TextAlign.right,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "현재 자산(\$)",
               ),
             ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: TextField(
-            controller: controller5,
-            textAlign: TextAlign.right,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: "출금(원)",
+          Container(
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text("입금",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
             ),
           ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: TextField(
-            controller: controller6,
-            textAlign: TextAlign.right,
-            decoration: InputDecoration(
-              border: OutlineInputBorder(),
-              hintText: "출금(\$)",
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: controller3,
+              textAlign: TextAlign.right,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "입금(원)",
+              ),
             ),
           ),
-        ),
-        Container(
-          alignment: Alignment.center,
-          child: ElevatedButton(
-              onPressed: saveDB,
-              child: Text("Enter")),
-        )
-      ],
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: controller4,
+              textAlign: TextAlign.right,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "입금(\$)",
+              ),
+            ),
+          ),
+          Container(
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Text("출금",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: controller5,
+              textAlign: TextAlign.right,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "출금(원)",
+              ),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: TextField(
+              controller: controller6,
+              textAlign: TextAlign.right,
+              decoration: InputDecoration(
+                border: OutlineInputBorder(),
+                hintText: "출금(\$)",
+              ),
+            ),
+          ),
+          Container(
+            alignment: Alignment.center,
+            child: ElevatedButton(
+                onPressed: saveDB,
+                child: Text("Enter")),
+          )
+        ],
+      ),
     );
   }
 

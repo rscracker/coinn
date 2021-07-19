@@ -17,9 +17,6 @@ class _NavigationState extends State<Navigation> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title : Text("Coin"),
-      ),
       body: pages[_index],
       bottomNavigationBar: BottomNavigationBar(
           onTap: (index) {
@@ -30,16 +27,16 @@ class _NavigationState extends State<Navigation> {
           currentIndex: _index,
           items: <BottomNavigationBarItem>[
             BottomNavigationBarItem(
-              label: 'log',
+              label: 'Log',
+              icon: Icon(Icons.request_page),
+            ),
+            BottomNavigationBarItem(
+              label: 'Home',
               icon: Icon(Icons.home),
             ),
             BottomNavigationBarItem(
-              label: 'home',
-              icon: Icon(Icons.home),
-            ),
-            BottomNavigationBarItem(
-              label: 'set',
-              icon: Icon(Icons.home),
+              label: 'Add',
+              icon: Icon(Icons.add),
             ),
           ]),
     );
