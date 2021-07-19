@@ -12,7 +12,7 @@ class Setting extends StatefulWidget {
 
 class _SettingState extends State<Setting> {
   String formattedDate = DateFormat('yyyy-MM-dd – kk:mm').format(DateTime.now());
-  
+
   final controller1 = TextEditingController();
   final controller2 = TextEditingController();
   final controller3 = TextEditingController();
